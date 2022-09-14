@@ -112,27 +112,3 @@ export const getNutritions = async (req, res) => {
       });
     });
 };
-
-/*
-try {
-    const nameChanges = {
-    };
-    const renamed = await Nutrient.updateMany(
-        {},
-        { $rename: nameChanges },
-        {
-          // Strict allows to update keys that do not exist anymore in the schema
-          strict: false,
-        }
-      ).exec();
-    res.send({
-        success: true,
-        message: 'success'
-    })
-  }catch(err) {
-    res.send({
-        success: false,
-        message: err.message
-    })
-  }
-*/

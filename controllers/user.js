@@ -19,33 +19,6 @@ import {
   runTransaction,
 } from "firebase/firestore";
 
-/* export const signin = async (req, res) => {
-  const { userId } = req.body;
-  const userDocRef = doc(db, "users", `${userId}`);
-  console.log(userDocRef.id);
-  const userDocSnap = await getDoc(userDocRef);
-  if (userDocSnap.exists()) {
-    res.status(200).json({
-      success: true,
-      message: "Login success",
-      user: userDocSnap.id, 
-    })
-  } else {
-    console.log("Cannot get user!");
-    return null;
-  }
-}; */
-
-const getUser = async (userId) => {
-  const userDocRef = doc(db, "users", `${userId}`);
-  const userDocSnap = await getDoc(userDocRef);
-  if (userDocSnap.exists()) {
-    return userDocSnap.data();
-  } else {
-    console.log("Cannot get user!");
-    return null;
-  }
-};
 export const signin = async (req, res) => {
   const { email, password } = req.body;
 
